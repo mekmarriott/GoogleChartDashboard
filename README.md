@@ -3,7 +3,7 @@ A fully-customizable dashboard control that connects to a SQL-based database API
 
 ### Requirements
 GoogleChartDashboard requires all the following for initializing [Google Chart]:
-* [Jquery] (1.12.0 recommended)
+* [Jquery] *1.12.0 recommended*
 * [Google Loader]
 * [jsapi]
 * [GoogleChartDashboard]
@@ -38,6 +38,8 @@ Initialize HTML objects for each chart and remove-filter-button, including
 ```javascript
 function removeFilter(filterID){ gcd.removeFilter(filterID) }
 ```
+Note that the remove filter element can be any element, as long as the onclick functionality is present and the initial display corresponds to whether the filter is already 'on' (default settings should correspond to initial display being none).
+
 Set callback for google as a method that will call 'updateAll' on the dashboard object 
 ```javascript
 google.setOnLoadCallback(function() {gcd.updateAll();});
@@ -92,8 +94,14 @@ This object maps all the search ids (distinct search filters) to its respective 
 **Required**
 * `querySelector` sql column name to extract chart information from the data column
 
+Searches affect the google chart visualizations, but must be handled client side through updating the object search filters and updating through the Dashboard properties. An example is given below:
+```javascript
+gcd.searchFilters[filterID].searchQuery = "hello";
+gcd.updateAll();
+```
+
 #### Google Sheet URL
-See `Database API Connection` above to see which url to input for this argument
+See `Database API Connection` above to determine which url to input for this argument.
 
 #### Miscellaneous Filters
 **Required**
