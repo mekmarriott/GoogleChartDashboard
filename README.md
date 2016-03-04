@@ -67,7 +67,7 @@ This object maps all the google chart ids (distinct chart selector filters) to i
 * `_stackedValue` string for a pre-set super filter on the data column - default is null and `stacked` must be enabled
 * `customFunction` function that is called if the filter is specified as 'custom,' default is null
 
-### Range Filters
+#### Range Filters
 This object maps all the range ids (distinct range filters) to its respective configurations, which are listed below.
 
 **Required**
@@ -86,16 +86,16 @@ gcd.rangeFilters[filterID].valueBottom = 34;
 gcd.updateAll();
 ```
 
-### Search Filters
+#### Search Filters
 This object maps all the search ids (distinct search filters) to its respective configurations, which are listed below.
 
 **Required**
 * `querySelector` sql column name to extract chart information from the data column
 
-### Google Sheet URL
+#### Google Sheet URL
 See `Database API Connection` above to see which url to input for this argument
 
-### Miscellaneous Filters
+#### Miscellaneous Filters
 **Required**
 * `createFilterFuncion` function that is called when adding a filter-to-remove button (generates the html inside the div/button/input specified by `filterElement`)
 
