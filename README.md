@@ -54,7 +54,7 @@ This object maps all the google chart ids (distinct chart selector filters) to i
 * `querySelector` sql column name to extract chart information from
 * `chartElement` div id in which to draw the chart/selector
 * `filterElement` div/button/input id in which to draw the interactive button to remove a filter
-* `chartType` type of google chart - currently supported chart types include [geo], [column], [pie], and custom. example code for a simple pie and custom chart are shown below. 
+* `chartType` type of google chart - currently supported chart types include [geo], [column], [pie], and custom - note that custom does not use `chartElement` or `filterElement` (but still requires a non-null input), and can optionally take a `customFunction` argument to specify custom behaviour. 
 [geo]: https://google-developers.appspot.com/chart/interactive/docs/gallery/geochart
 [column]: https://google-developers.appspot.com/chart/interactive/docs/gallery/columnchart
 [pie]: https://google-developers.appspot.com/chart/interactive/docs/gallery/piechart
