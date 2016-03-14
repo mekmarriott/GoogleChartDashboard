@@ -111,5 +111,8 @@ See `Database API Connection` above to determine which url to input for this arg
 * `superToSubCategory` this object maps all category ids to another object, which maps all super-categories to an array of its sub-categories
 * `subToSuperCategory` this object maps all category ids to another object, which maps all sub-categories to its super-category
 * `extraColumns` additional data columns to retrieve with each request
+* `dataFunction` custom function for retrieving data from a non-google spreadsheet SQL source. Accepts the SQL query and callback as arguments, and must execute the callback. The callback accepts a google datatable with the corresponding query data (where each row is an entry and the columns are selectors in the order of the query). More information on ways to create and format google datatables  [here]
 * `updateFunction` custom function that is called at each update (in addition to the default)
+
+[here]: https://developers.google.com/chart/interactive/docs/reference#constructor_1
 
